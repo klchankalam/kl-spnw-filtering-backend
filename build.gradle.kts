@@ -26,9 +26,18 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	//implementation("org.liquibase:liquibase-core")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+		exclude(module = "junit", group = "junit")
+	}
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 	runtime("com.h2database:h2")
+}
+
+tasks.test {
+	useJUnitPlatform()
+	systemProperty("junit.jupiter.testinstance.lifecycle.default", "per_class")
 }
 
 tasks.withType<KotlinCompile> {

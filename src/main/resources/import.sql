@@ -1,0 +1,48 @@
+-- to add initial data to H2
+insert into city (name, latitude, longitude)
+VALUES
+    ('Leeds', 53.801277, -1.548567),
+    ('Solihull', 52.412811, -1.778197),
+    ('Cardiff', 51.481583, -3.179090),
+    ('Eastbourne', 50.768036, 0.290472),
+    ('London', 51.509865, -0.118092),
+    ('Swindon', 51.568535, -1.772232),
+    ('Oxford', 51.752022, -1.257677),
+    ('Salisbury', 51.068787, -1.794472),
+    ('Weymouth', 50.614429, -2.457621),
+    ('Bournemouth', 50.720806, -1.904755),
+    ('Plymouth', 50.376289, -4.143841),
+    ('Inverness', 57.477772, -4.224721),
+    ('Aberdeen', 57.149651, -2.099075),
+    ('Ayr', 55.458565, -4.629179),
+    ('Belfast', 54.607868, -5.926437),
+    ('Londonderry', 55.006763, -7.318268),
+    ('Harlow', 51.772938, 0.102310);
+
+insert into user (id, display_name, age, height_in_cm, job_title, city, main_photo, compatibility_score, contacts_exchanged, favourite, religion)
+VALUES
+    (user_seq.nextval, 'Caroline', 41, 153, 'Corporate Lawyer', 'Leeds', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.76, 2, true, 'Atheist'),
+    (user_seq.nextval, 'Sharon', 47, 161, 'Doctor', 'Solihull', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.97, 0, false, 'Islam'),
+    (user_seq.nextval, 'Natalia', 38, 144, 'Project Manager', 'Cardiff', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.47, 5, false, 'Christian'),
+    (user_seq.nextval, 'Marta', 55, 140, 'Finance', 'Eastbourne', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.95, 0, false, 'Agnostic'),
+    (user_seq.nextval, 'Maria', 43, 175, 'CEO', 'London', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.88, 0, false, 'Christian'),
+    (user_seq.nextval, 'Stephanie', 39, 153, 'Project Manager', 'London', null, 0.87, 4, false, 'Christian'),
+    (user_seq.nextval, 'Claire', 48, 167, 'GP', 'London', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.83, 6, false, 'Atheist'),
+    (user_seq.nextval, 'Colette', 39, 177, 'Doctor - Hospital', 'Swindon', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.89, 2, false, 'Christian'),
+    (user_seq.nextval, 'Caroline', 43, 160, 'Marketing Consultant', 'Oxford', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.91, 1, false, 'Atheist'),
+    (user_seq.nextval, 'Kate', 42, 160, 'Psychologist', 'Salisbury', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.97, 10, false, 'Buddhist'),
+    (user_seq.nextval, 'Katie', 40, 148, 'Lawyer', 'Weymouth', null, 0.94, 0, false, 'Atheist'),
+    (user_seq.nextval, 'Clare', 40, 144, 'Accountant', 'Bournemouth', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.90, 8, false, 'Christian'),
+    (user_seq.nextval, 'Laura', 39, 160, 'Lawyer', 'Plymouth', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.89, 0, false, 'Christian'),
+    (user_seq.nextval, 'Katlin', 39, 153, 'Barrister', 'Inverness', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.87, 0, true, 'Jewish'),
+    (user_seq.nextval, 'Tracy', 39, 153, 'Lawyer', 'Aberdeen', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.87, 0, false, 'Christian'),
+    (user_seq.nextval, 'Angie', 50, 153, 'Accountant', 'Ayr', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.93, 8, true, 'Atheist'),
+    (user_seq.nextval, 'Samantha', 32, 161, 'Project Manager', 'Belfast', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.89, 0, false, 'Christian'),
+    (user_seq.nextval, 'Elizabeth', 41, 145, 'Dentist', 'Londonderry', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.83, 4, true, 'Islam'),
+    (user_seq.nextval, 'Emma', 40, 150, 'Banker', 'Leeds', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.73, 0, false, 'Christian'),
+    (user_seq.nextval, 'Diana', 44, 153, 'Consultant', 'London', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.50, 0, false, 'Atheist'),
+    (user_seq.nextval, 'Kysha', 45, 144, 'Lawyer', 'London', null, 0.88, 10, true, 'Islam'),
+    (user_seq.nextval, 'Anne', 38, 170, 'Marketing Consultant', 'Swindon', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.88, 0, false, 'Jewish'),
+    (user_seq.nextval, 'Daniela', 37, 177, 'Doctor', 'Bournemouth', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.76, 0, false, 'Christian'),
+    (user_seq.nextval, 'Katherine', 39, 177, 'Lawyer', 'London', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.99, 50, true, 'Atheist'),
+    (user_seq.nextval, 'Susan', 25, 166, 'Project Manager', 'Harlow', 'http://thecatapi.com/api/images/get?format=src&type=gif', 0.88, 0, false, 'Christian');

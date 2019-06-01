@@ -15,7 +15,7 @@ data class User(
         @JoinColumn(name = "city")
         val city: City,
         val mainPhoto: String?,
-        val compatibilityScore: Int,
+        val compatibilityScore: Double,
         val contactsExchanged: Int,
         val favourite: Boolean,
         val religion: String?

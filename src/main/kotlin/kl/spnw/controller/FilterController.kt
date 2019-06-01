@@ -14,7 +14,7 @@ class FilterController (
                 @RequestParam compatibilityScoreLow: Int?, @RequestParam compatibilityScoreHigh: Int?,
                 @RequestParam ageLow: Int?, @RequestParam ageHigh: Int?,
                 @RequestParam heightLow: Int?, @RequestParam heightHigh: Int?,
-                @RequestParam distanceWithinKM: Int?): List<User> {
+                @RequestParam distanceWithinKM: Int?): Iterable<User> {
         return userFilterService.filterUser(hasPhoto, inContact, isFavourite,
                 compatibilityScoreLow, compatibilityScoreHigh,
                 ageLow, ageHigh, heightLow, heightHigh, distanceWithinKM)

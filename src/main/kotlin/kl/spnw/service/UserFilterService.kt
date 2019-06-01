@@ -3,9 +3,9 @@ package kl.spnw.service
 import kl.spnw.entity.User
 
 interface UserFilterService {
-    fun filterUser(hasPhoto: Boolean?, inContact: Boolean?, favourite: Boolean?,
+    fun filterUser(hasPhoto: Boolean?, inContact: Boolean?, isFavourite: Boolean?,
                    compatibilityScoreLow: Int?, compatibilityScoreHigh: Int?,
                    ageLow: Int?, ageHigh: Int?,
                    heightLow: Int?, heightHigh: Int?,
-                   distanceWithinKM: Int?): MutableList<User>
+                   distanceWithinKM: Int?): Iterable<User>
 }

@@ -1,12 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	kotlin("plugin.jpa") version "1.2.71"
+	kotlin("plugin.jpa") version "1.3.31"
 	id("org.springframework.boot") version "2.1.5.RELEASE"
 	id("io.spring.dependency-management") version "1.0.7.RELEASE"
 	war
-	kotlin("jvm") version "1.2.71"
-	kotlin("plugin.spring") version "1.2.71"
+	kotlin("jvm") version "1.3.31"
+	kotlin("plugin.spring") version "1.3.31"
+	kotlin("kapt") version "1.3.31"
+	java
+	idea
 }
 
 group = "kl.spnw"
@@ -24,6 +27,9 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("com.querydsl:querydsl-jpa")
+	implementation("javax.inject:javax.inject")
+	kapt("com.querydsl:querydsl-apt:4.2.1:jpa")
 	//implementation("org.liquibase:liquibase-core")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {

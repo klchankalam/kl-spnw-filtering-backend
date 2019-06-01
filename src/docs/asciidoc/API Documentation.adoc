@@ -1,0 +1,19 @@
+= spnw API doc
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[introduction]
+= Introduction
+
+This serve as a simple API documentation for this exercise. There is only 1 API for getting and filtering users.
+
+[Get User]
+= Get User
+
+GET operation to get and filter users. All request parameters are optional.
+
+operation::GetUser[snippets='curl-request,http-request,http-response,request-parameters,response-fields']

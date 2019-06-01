@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "3561b29c-d17c-48b0-aea3-1697c2617d50",
+    "name": "spnw",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "spnw get api",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/user/api/user?hasPhoto=true&inContact=false&isFavourite=false&compatibilityScoreLow=10&compatibilityScoreHigh=99&ageLow=18&ageHigh=95&heightLow=135&heightHigh=210&userLatitude=55.458565&userLongitude=-4.629179&distanceWithinKM=300",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "user",
+            "api",
+            "user"
+          ],
+          "query": [
+            {
+              "key": "hasPhoto",
+              "value": "true"
+            },
+            {
+              "key": "inContact",
+              "value": "false"
+            },
+            {
+              "key": "isFavourite",
+              "value": "false"
+            },
+            {
+              "key": "compatibilityScoreLow",
+              "value": "10"
+            },
+            {
+              "key": "compatibilityScoreHigh",
+              "value": "99"
+            },
+            {
+              "key": "ageLow",
+              "value": "18"
+            },
+            {
+              "key": "ageHigh",
+              "value": "95"
+            },
+            {
+              "key": "heightLow",
+              "value": "135"
+            },
+            {
+              "key": "heightHigh",
+              "value": "210"
+            },
+            {
+              "key": "userLatitude",
+              "value": "55.458565"
+            },
+            {
+              "key": "userLongitude",
+              "value": "-4.629179"
+            },
+            {
+              "key": "distanceWithinKM",
+              "value": "300"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

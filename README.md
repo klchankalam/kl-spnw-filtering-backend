@@ -8,6 +8,8 @@ or
 
 in project root.
 
+When you run the project, h2 will be created and the default data set will be imported. All data are removed when bootRun stops.
+
 Design decisions:
 - in normal application, user and favourite/score should be in separate tables. In this demo they are all in user table due to the assumption of requirement
 - city is in another table, from what i see the coordinates of a city is the same, i assume there would be a city selector when user create their profiles

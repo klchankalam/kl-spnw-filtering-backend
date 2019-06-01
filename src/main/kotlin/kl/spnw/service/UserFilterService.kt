@@ -7,5 +7,7 @@ interface UserFilterService {
                    compatibilityScoreLow: Int?, compatibilityScoreHigh: Int?,
                    ageLow: Int?, ageHigh: Int?,
                    heightLow: Int?, heightHigh: Int?,
-                   distanceWithinKM: Int?): Iterable<User>
+                   distanceWithinKM: Int?,
+                   userLatitude: Double?,
+                   userLongitude: Double?): Iterable<User>
 }

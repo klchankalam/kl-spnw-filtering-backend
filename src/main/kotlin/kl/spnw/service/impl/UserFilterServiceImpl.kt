@@ -7,6 +7,7 @@ import kl.spnw.entity.QUser
 import kl.spnw.entity.User
 import kl.spnw.repository.UserRepository
 import kl.spnw.service.UserFilterService
+import kl.spnw.util.DistanceUtil
 import org.springframework.stereotype.Service
 
 @Service
@@ -17,13 +18,14 @@ class UserFilterServiceImpl(
                             compatibilityScoreLow: Int?, compatibilityScoreHigh: Int?,
                             ageLow: Int?, ageHigh: Int?,
                             heightLow: Int?, heightHigh: Int?,
-                            distanceWithinKM: Int?): Iterable<User> {
+                            distanceWithinKM: Int?,
+                            userLatitude: Double?,
+                            userLongitude: Double?): Iterable<User> {
         // TODO get upper/lower bound of latitude/longitude with distance criteria, limit result to a square for now
 
 
         // generate predicate
         val predicate = ExpressionUtils.allOf(
-                QUser.user.displayName.isNotNull, // dummy condition to avoid empty predicate
                 getPhotoPredicate(hasPhoto),
                 getContactPredicate(inContact),
                 getFavouritePredicate(isFavourite),
@@ -31,13 +33,16 @@ class UserFilterServiceImpl(
                 getAgePredicate(ageLow, ageHigh),
                 getHeightPredicate(heightLow, heightHigh)//,
                 //getDistancePredicate()
-        )!!
+        )
 
         // get result
-        val result = userRepository.findAll(predicate)
+        val result = if (predicate != null) userRepository.findAll(predicate) else userRepository.findAll()
 
-        // TODO filter distance again, upper/lower bound of lon/lat is a square, but distance bound is a circle
-        return result
+        // filter distance again, upper/lower bound of lon/lat is a square, but distance bound is a circle
+        return if (distanceWithinKM == null) result else
+            result.filter {
+                DistanceUtil.AreTwoCoordinateWithinDistance(
+                        userLatitude!!, userLongitude!!, it.city.latitude, it.city.longitude, distanceWithinKM) }
     }
 
     private fun getCompatibilityPredicate(compatibilityScoreLow: Int?, compatibilityScoreHigh: Int?): Predicate? =

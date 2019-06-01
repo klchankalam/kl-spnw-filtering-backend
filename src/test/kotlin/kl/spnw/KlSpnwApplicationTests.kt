@@ -1,5 +1,6 @@
 package kl.spnw
 
+import kl.spnw.entity.City
 import kl.spnw.entity.User
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
@@ -13,6 +14,8 @@ class KlSpnwApplicationTests {
 
 	@Autowired
 	lateinit var webClient: WebTestClient
+
+	val userCity = City("Ayr", 55.458565, -4.629179)
 
 	private fun assertBasicInfoAndSize(size: Int, urlParam: String?): List<User> =
 		this.webClient.get().uri("/api/user?$urlParam").exchange()
@@ -95,5 +98,23 @@ class KlSpnwApplicationTests {
 	@Test
 	fun testFilterOnHeightAndAge() {
 		genericTest(listOf("Colette", "Anne","Daniela","Katherine"),"ageHigh=40&heightLow=170")
+	}
+
+	@Test
+	fun testFilterBy300KM() {
+		genericTest(listOf("Caroline", "Emma", "Katlin", "Tracy", "Angie", "Samantha", "Elizabeth"),
+				"userLatitude=${userCity.latitude}&userLongitude=${userCity.longitude}&distanceWithinKM=300")
+	}
+
+	@Test
+	fun testFilterBy20KM() {
+		genericTest(listOf("Angie"),
+				"userLatitude=${userCity.latitude}&userLongitude=${userCity.longitude}&distanceWithinKM=20")
+	}
+
+	@Test
+	fun testFilterBy100KM() {
+		genericTest(listOf("Angie", "Samantha"),
+				"userLatitude=${userCity.latitude}&userLongitude=${userCity.longitude}&distanceWithinKM=150")
 	}
 }

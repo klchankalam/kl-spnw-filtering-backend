@@ -2,9 +2,7 @@ package kl.spnw.controller
 
 import kl.spnw.entity.User
 import kl.spnw.service.UserFilterService
-import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.server.ResponseStatusException
 
 @RestController
 @RequestMapping("/api")
@@ -20,10 +18,10 @@ class FilterController (
                 @RequestParam distanceWithinKM: Int?): Iterable<User> {
 
         // validate input
-        InputValidator.checkIntBoundary(compatibilityScoreLow, compatibilityScoreHigh,
+        InputValidator.checkLowerAndUpperIntBoundary(compatibilityScoreLow, compatibilityScoreHigh,
                 "Compatibility Score", 1, 99)
-        InputValidator.checkIntBoundary(ageLow, ageHigh,"Age", 18, 95)
-        InputValidator.checkIntBoundary(heightLow, heightHigh, "Height", 135, 210)
+        InputValidator.checkLowerAndUpperIntBoundary(ageLow, ageHigh,"Age", 18, 95)
+        InputValidator.checkLowerAndUpperIntBoundary(heightLow, heightHigh, "Height", 135, 210)
         InputValidator.checkAllOrNone(listOf("Latitude", "longitude", "distance"),
                 userLatitude, userLongitude, distanceWithinKM)
         InputValidator.checkDoubleBoundary(userLatitude, "Latitude", -90.0, 90.0)

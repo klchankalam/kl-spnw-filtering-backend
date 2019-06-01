@@ -7,7 +7,7 @@ import org.springframework.web.server.ResponseStatusException
 open class InputValidator {
     companion object {
         @JvmStatic
-        fun checkIntBoundary(inputLow: Int?, inputHigh: Int?, name: String, lowerBound: Int, upperBound: Int) {
+        fun checkLowerAndUpperIntBoundary(inputLow: Int?, inputHigh: Int?, name: String, lowerBound: Int, upperBound: Int) {
             inputLow?.let {
                 checkIntBoundary(it, name, lowerBound, upperBound)
             }

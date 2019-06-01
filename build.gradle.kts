@@ -34,8 +34,10 @@ dependencies {
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(module = "junit", group = "junit")
+		exclude(module = "mockito-core")
 	}
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("com.ninja-squad:springmockk:1.1.2")
 	testImplementation("org.junit.jupiter:junit-jupiter-api")
 	testImplementation("org.junit.jupiter:junit-jupiter-params")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")

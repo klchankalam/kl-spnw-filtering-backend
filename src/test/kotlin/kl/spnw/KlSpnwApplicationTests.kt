@@ -107,9 +107,9 @@ class KlSpnwApplicationTests {
 	}
 
 	@Test
-	fun testFilterBy20KM() {
+	fun testFilterBy30KM() {
 		genericTest(listOf("Angie"),
-				"userLatitude=${userCity.latitude}&userLongitude=${userCity.longitude}&distanceWithinKM=20")
+				"userLatitude=${userCity.latitude}&userLongitude=${userCity.longitude}&distanceWithinKM=30")
 	}
 
 	@Test

@@ -52,9 +52,9 @@ class KlSpnwApplicationTests {
 
 	@Test
 	fun testFilterOnScoreLow() {
-		val expectedNameList = listOf("Natalia")
+		val unexpectedNameList = listOf("Natalia")
 		val userList = assertBasicInfoAndSize(24, "compatibilityScoreLow=49")
-		assert(!userList.map { it.displayName }.containsAll(expectedNameList))
+		assert(!userList.map { it.displayName }.containsAll(unexpectedNameList))
 	}
 
 	@Test
